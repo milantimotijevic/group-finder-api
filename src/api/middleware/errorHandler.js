@@ -1,7 +1,6 @@
 const { isBoom } = require('@hapi/boom');
 const Logger = require('../../util/Logger');
 
-// eslint-disable-next-line no-unused-vars
 function errorHandler(err, req, res, next) {
 	if (isBoom(err)) {
 		return res.status(err.output.statusCode).send(err.output.payload.message);

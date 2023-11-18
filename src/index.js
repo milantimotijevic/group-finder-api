@@ -10,14 +10,6 @@ const controllers = require('./api/controllers');
 const Logger = require('./util/Logger');
 const pack = require('../package.json');
 
-require('./repository/models')
-
-require('./service/CronService');
-
-if (!process.env.SECRET_ID || !process.env.SECRET_KEY) {
-	Logger.warn('SECRET(s) not specified');
-}
-
 const PORT = process.env.PORT || 3000;
 
 const app = express();
