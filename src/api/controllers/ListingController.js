@@ -12,6 +12,19 @@ const applyRoutes = (app) => {
                 return next(err);
             }
         }
+    );
+
+    app.post(
+        '/listing',
+        async (req, res, next) => {
+            try {
+                const listing = await ListingService.createListing(req.body);
+                return res.json(listing);
+            } catch (err) {
+                console.log(err);
+                return next(err);
+            }
+        }
     )
 };
 
