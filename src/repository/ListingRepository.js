@@ -8,11 +8,17 @@ const getListings = async () => {
     return listings;
 };
 
+const getListingById = async (id) => {
+    const listing = await model.findById(id);
+    return listing;
+};
+
 const createListing = (listingParam) => {
     return model.create(listingParam)
 };
 
 module.exports = {
     getListings,
+    getListingById,
     createListing,
 };
