@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-	name: { type: String },
-	region: { type: mongoose.Schema.Types.ObjectId, ref: 'Region' }
+	name: { type: String, unique: true },
 }, {
 	timestamps: {
 		createdAt: 'created_at',
@@ -10,8 +9,6 @@ const schema = new mongoose.Schema({
 	},
 });
 
-schema.index({ region: 1, name: 1 })
-
-mongoose.model('Location', schema);
+mongoose.model('Region', schema);
 
 module.exports = schema;
