@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-	name: { type: String },
-	region: { type: mongoose.Schema.Types.ObjectId, ref: 'Region' }
+	name: { type: String, required: true },
+	region: { type: mongoose.Schema.Types.ObjectId, ref: 'Region', required: true }
 }, {
 	timestamps: {
 		createdAt: 'created_at',

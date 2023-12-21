@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Logger = require('../util/Logger');
-require('../models/Listing');
+require('../models/Region');
 require('../models/Location');
+require('../models/Listing');
 
 const { MONGO_CONNECTION_STRING } = process.env;
 

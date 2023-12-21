@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-	name: { type: String, unique: true },
+	name: { type: String, unique: true, required: true },
 }, {
 	timestamps: {
 		createdAt: 'created_at',
